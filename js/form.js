@@ -14,9 +14,7 @@ btAdd.addEventListener("click", function (event) {
         return;
     }
 
-    var tabela = document.querySelector("#tabela-pacientes");
-
-    tabela.appendChild(pacienteTr);
+    adicionaPacienteNaTabela(paciente);
 
     form.reset();
 
@@ -97,5 +95,11 @@ function exibeMensagemErro(erros){
         li.textContent = erro;
         ul.appendChild(li);
     });
+}
 
+
+function adicionaPacienteNaTabela(paciente){
+    var pacienteTr = constroiTr(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
 }
